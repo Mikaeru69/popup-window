@@ -1,0 +1,14 @@
+{
+    "name": "popup-window",
+    "version": "1.0.0",
+    "description": "Electron test app: simple pop-up window (macOS).",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "author": "Mikaeru",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^2.0.0"
+    }
+}
