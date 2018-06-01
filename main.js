@@ -1,4 +1,5 @@
 const { app, BrowserWindow, globalShortcut, ipcMain } = require ('electron');
+app.dock.hide ();
 let mainWindow = null;
 function onAppReady ()
 {
@@ -7,7 +8,7 @@ function onAppReady ()
         {
             width: 600,
             height: 600,
-            show: false,
+            show: true,
             frame: false
         }
     );
@@ -15,8 +16,7 @@ function onAppReady ()
     mainWindow.once ('closed', () => { mainWindow = null; });
     mainWindow.on ('blur', () => { mainWindow.hide (); });
     app.once ('window-all-closed', () => { app.quit (); });
-    app.on ('activate', () => { mainWindow.show (); });
-    app.dock.hide ();
+//    app.on ('activate', () => { mainWindow.show (); });
     globalShortcut.register ("CommandOrControl+Alt+P", () => { mainWindow.show (); });
     ipcMain.on ('dismiss', () => { app.hide (); });
 }
